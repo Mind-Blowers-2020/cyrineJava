@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ajoutlivreur" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuiController.AjoutlivreurController">
+   <children>
+      <Label layoutX="63.0" layoutY="42.0" prefHeight="54.0" prefWidth="331.0" text="      Ajout livreur">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="152.0" text="nom" />
+      <Label layoutX="35.0" layoutY="187.0" text="prenom" />
+      <Label layoutX="35.0" layoutY="224.0" text="cin" />
+      <Label layoutX="35.0" layoutY="262.0" text="email" />
+      <Label layoutX="35.0" layoutY="300.0" text="numTel" />
+      <Label layoutX="35.0" layoutY="338.0" text="adresse" />
+      <TextField fx:id="txtn" layoutX="109.0" layoutY="148.0" promptText="votre nom" />
+      <TextField fx:id="txtp" layoutX="109.0" layoutY="183.0" promptText="votre prenom" />
+      <TextField fx:id="txtc" layoutX="109.0" layoutY="223.0" promptText="cin" />
+      <TextField fx:id="txtemail" layoutX="109.0" layoutY="259.0" promptText="votre email adresse" />
+      <TextField fx:id="txttel" layoutX="109.0" layoutY="296.0" promptText="votre numero de tel" />
+      <TextField fx:id="txtad" layoutX="109.0" layoutY="334.0" promptText="votre adresse" />
+      <Button layoutX="82.0" layoutY="399.0" mnemonicParsing="false" onAction="#ajouter" text="ajouter" />
+      <Button layoutX="250.0" layoutY="399.0" mnemonicParsing="false" onAction="#videraction" text="vider" />
+   </children>
+</AnchorPane>
