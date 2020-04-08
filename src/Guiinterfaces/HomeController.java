@@ -34,7 +34,17 @@ public void lancerlivraison(ActionEvent event) throws IOException
 {AnchorPane pane =FXMLLoader.load(getClass().getResource("/Guiinterfaces/listelivraison.fxml"));
 rootpane.getChildren().setAll(pane);
 }
+@FXML
+public void lancerfront(ActionEvent event) throws IOException
+{AnchorPane pane =FXMLLoader.load(getClass().getResource("/Guiinterfaces/reclamtionfront.fxml"));
+rootpane.getChildren().setAll(pane);
+}
 
+@FXML
+public void lancerlistereclamation(ActionEvent event) throws IOException
+{AnchorPane pane =FXMLLoader.load(getClass().getResource("/Guiinterfaces/listereclamation.fxml"));
+rootpane.getChildren().setAll(pane);
+}
 
 
     /**

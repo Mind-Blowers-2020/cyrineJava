@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/updatelivraison.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/AjoutlivreurController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/HomeController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/listereclamation.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/Gestionreclamation.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/CSS/style.css</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/entities/livraison.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/Gestionlivraison.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/homefront.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/UpdatelivraisonController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/InscritlivController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/AjoutlivraisonController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/pidevj/Pidevj.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/Gestionlivreur.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/HomefrontController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/listelivraison.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/pidevj/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/UpdatelivreurController.java</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/ajoutlivreur.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/inscritliv.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/Guiinterfaces/reclamtionfront.fxml</file>
+            <file>file:/C:/Users/asus/Documents/NetBeansProjects/pidevj/src/GuiController/ReclamtionfrontController.java</file>
+        </group>
+    </open-files>
+</project-private>

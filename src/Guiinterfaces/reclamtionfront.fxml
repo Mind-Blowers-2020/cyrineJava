@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="panereclamation" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuiController.ReclamtionfrontController">
+   <children>
+      <Label layoutX="154.0" layoutY="31.0" text="RECLAMTION">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="retard" layoutX="59.0" layoutY="145.0" mnemonicParsing="false" text="Retard de livraison">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="nonconforme" layoutX="59.0" layoutY="189.0" mnemonicParsing="false" text="Livraison non conforme">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="defect" layoutX="59.0" layoutY="235.0" mnemonicParsing="false" text="Livraison endommagèe dèfectueuse">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="service" layoutX="59.0" layoutY="277.0" mnemonicParsing="false" text="Mauvais service ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </RadioButton>
+      <TextArea fx:id="cmnt" layoutX="75.0" layoutY="329.0" prefHeight="117.0" prefWidth="369.0" />
+      <Button layoutX="341.0" layoutY="507.0" mnemonicParsing="false" onAction="#annulerreclamation" text="annuler" />
+      <Button layoutX="123.0" layoutY="507.0" mnemonicParsing="false" onAction="#envoyerreclamation" text="envoyer" />
+      <Label layoutX="24.0" layoutY="94.0" text="code de livraison ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="code_liv" layoutX="164.0" layoutY="92.0" prefHeight="25.0" prefWidth="87.0" />
+      <Button fx:id="pdf" layoutX="225.0" layoutY="550.0" mnemonicParsing="false" onAction="#pdfaction" text="pdf" />
+   </children>
+</AnchorPane>

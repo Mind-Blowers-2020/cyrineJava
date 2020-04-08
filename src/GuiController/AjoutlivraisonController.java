@@ -48,10 +48,51 @@ Gestionlivraison gs =new Gestionlivraison() ;
        public Date convertToDateViaSqlDate(LocalDate dateToConvert) {
     return java.sql.Date.valueOf(dateToConvert);
 }
+          public void afficherAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Information Dialog");
+        //alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.show();
+    }
+    
+        public boolean testSaisie() {
+        
+       // System.out.println("compare="+dateDebut.getValue().compareTo(dateFin.getValue()));
+
+        if (id_livreur.getValue()== null|| id_panier.getValue()==null||
+                date.getValue() == null||destination.getText().trim().isEmpty()||cout_liv.getText().trim().isEmpty()
+                
+               
+                
+                //|| imageFileLabel.getText().trim().isEmpty()
+                ) {
+            afficherAlert("Tous les champs doivent être remplis");
+            return false;
+        }
+        /*String r=NameClass.getText().substring(0,1);
+        String r2=NameClass.getText().substring(0,2);
+        if(!r.equals(NiveauClass.getValue())&& !r2.equals(SpecClass.getValue()))
+                {
+            afficherAlert("verifier niveau et specalite champ");
+            return false;  
+                }*/
+          try {
+            Double num = Double.parseDouble( cout_liv.getText());
+        } catch (NumberFormatException e) {
+            afficherAlert("Champs cout de livraison  invalide");
+            return false;
+        }
+         
+        
+        
+        return true;
+    }
     public void ajoutlivraison(ActionEvent event)
 {
  
    Connection con=DataSource.getInstance().getCnx(); 
+   
  int id2=0 ;
   int idp=0 ;
         try {
@@ -79,7 +120,7 @@ Gestionlivraison gs =new Gestionlivraison() ;
    LocalDate datee=date.getValue() ;
     String destinatione=destination.getText();
     String cout_live=cout_liv.getText();
- 
+ if(testSaisie()){
     livraison newliv =new livraison();  
   newliv.setId(Integer.parseInt(idd));
   newliv.setId_livreur(id2);
@@ -98,7 +139,7 @@ Gestionlivraison gs =new Gestionlivraison() ;
     
     
     
-        
+ }
         
         
     }

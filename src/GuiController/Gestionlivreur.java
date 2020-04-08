@@ -16,6 +16,8 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -49,6 +51,7 @@ public class Gestionlivreur implements Initializable {
 public ObservableList <livreur> data =FXCollections.observableArrayList();
 @FXML
    Connection con=DataSource.getInstance().getCnx(); 
+
     public void ajouterlivr(livreur p)
     {      
 
@@ -175,6 +178,7 @@ public void lancermodifier (ActionEvent event) throws IOException
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        afficherlivreur();
     }    
     
 }

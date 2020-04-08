@@ -7,6 +7,7 @@ package GuiController;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+
 import entities.livraison;
 import entities.livreur;
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,11 +33,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javax.swing.JFileChooser;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Element;
+import javax.swing.text.Position;
+import javax.swing.text.Segment;
+import sun.plugin.dom.core.Document;
+
 import utils.DataSource;
 
 /**
@@ -199,7 +213,41 @@ return liste ;
 return st ; 
 }
     
+   /* @FXML 
+    public void  generatepdf(ActionEvent event)
+    {String path="" ;
+        JFileChooser j=new JFileChooser();
+    j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+    int x; 
+     x = j.showSaveDialog(j);
+    if (x==JFileChooser.APPROVE_OPTION)
+    {
+    path =j.getSelectedFile().getPath() ;}
+    Document doc =new Document() ;
+    PdfWriter.getInstance(doc,new FileOutStream(path+"av.pdf"));
     
+    }*/
+    @FXML 
+    
+    public void supprimer(ActionEvent event)
+    {
+        int i=0;
+        if (table_liv.getSelectionModel().getSelectedItem() != null) {
+            livraison p = table_liv.getSelectionModel().getSelectedItem();
+            i=p.getId();
+             Alert deleteBookAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            deleteBookAlert.setTitle("suppresion participant");
+            deleteBookAlert.setHeaderText(null);
+            deleteBookAlert.setContentText("vous étes sur de supprimer ce participant ?");
+            Optional<ButtonType> optionDeleteBookAlert = deleteBookAlert.showAndWait();
+            if (optionDeleteBookAlert.get() == ButtonType.OK) {
+               
+                delete(i);
+                data.clear();
+              listerlivraison();
+           
+    }
+        }}
     
     public livraison getlivraisonid(int id)
 {
@@ -231,6 +279,7 @@ public void ajouterlivraison(ActionEvent event) throws IOException
 {AnchorPane pane =FXMLLoader.load(getClass().getResource("/Guiinterfaces/ajoutlivraison.fxml"));
 panelivraison.getChildren().setAll(pane);
 }
+
 @FXML
 public void lancermodifier (ActionEvent event) throws IOException
 {AnchorPane pane =FXMLLoader.load(getClass().getResource("/Guiinterfaces/updatelivraison.fxml"));
@@ -242,6 +291,7 @@ public void lancermodifier (ActionEvent event) throws IOException
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        listerlivraison();
     } 
     }
     

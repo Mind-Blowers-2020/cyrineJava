@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import GuiController.Gestionlivreur ;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.scene.control.Alert;
 /**
  * FXML Controller class
@@ -34,10 +36,60 @@ public class AjoutlivreurController implements Initializable {
     @FXML private CheckBox dispo;
     @FXML private TextField txtnbliv ;
      private ObservableList< String> list=FXCollections.observableArrayList("1","2","3","4","5","6","7","8","9","10");
-     
+        public void afficherAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Information Dialog");
+        //alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.show();
+    }
     
-    
-    
+    public boolean validationemail()
+{ Pattern p=Pattern.compile("[a-zA-Z0-9][a-zA-Z._]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+");
+Matcher m=p.matcher(txtemail.getText());
+if(m.find()&&m.group().equals(txtemail.getText())){return true ;}
+else {afficherAlert("email invalide  ");
+        return false ;}
+}
+
+    public boolean testSaisie() {
+        
+       // System.out.println("compare="+dateDebut.getValue().compareTo(dateFin.getValue()));
+
+        if (txtn.getText().trim().isEmpty() || txtp.getText().trim().isEmpty()
+                || txtc.getText().trim().isEmpty()||txtemail.getText().trim().isEmpty()||txttel.getText().trim().isEmpty()
+                
+                || txtad.getText().trim().isEmpty()
+                
+                //|| imageFileLabel.getText().trim().isEmpty()
+                ) {
+            afficherAlert("Tous les champs doivent être remplis");
+            return false;
+        }
+        /*String r=NameClass.getText().substring(0,1);
+        String r2=NameClass.getText().substring(0,2);
+        if(!r.equals(NiveauClass.getValue())&& !r2.equals(SpecClass.getValue()))
+                {
+            afficherAlert("verifier niveau et specalite champ");
+            return false;  
+                }*/
+        if (
+                txtc.getText().trim().length()!=8
+                
+                
+                
+                //|| imageFileLabel.getText().trim().isEmpty()
+                ) {
+            afficherAlert("cin invalide ");
+            return false;
+        }
+        if (txttel.getText().trim().length()!=8)
+        {afficherAlert("numero de tel inavlide ");
+        return false ;}
+
+        
+        return true;
+    }
     /**
      * Initializes the controller class.
      */
@@ -68,7 +120,9 @@ public class AjoutlivreurController implements Initializable {
     String numTel=txttel.getText();
     String adresse=txtad.getText();
  
-    livreur newliv =new livreur () ;  
+ 
+    if (testSaisie()&& validationemail()){
+           livreur newliv =new livreur () ;  
     newliv.setId(555);
     newliv.setNomL(nomL); 
     newliv.setPrenomL(prenomL);
@@ -83,7 +137,8 @@ public class AjoutlivreurController implements Initializable {
        alert.setTitle("ajout livreur !");
        alert.setHeaderText("information");
        alert.setContentText("livreur bien ajouter!");
-       alert.showAndWait() ;
+       alert.showAndWait() ; }
+    
     
     
     
